@@ -5,7 +5,7 @@ class TodosController < ApplicationController
     @todo.update(status: todo_params[:status])
     respond_to do |format|
       format.turbo_stream { render turbo_stream: turbo_stream.remove("#{helpers.dom_id(@todo)}_container") }
-      format.html { redirect_to todos_path, notice: "Updated todo status." }
+      format.html { redirect_to todos_path, notice: 'Updated todo status.' }
     end
   end
 
